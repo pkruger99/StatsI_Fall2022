@@ -55,7 +55,6 @@ ggplot() +    #graphing the binned data
   ggtitle("iQs of the sample 25 students")+
   xlab("groups of student iQs") +
   ylab("Frequancy")
-
   
 
 # calculating the mean, sum of errors, (sum of errors)**2, variance, standard deviation,  turns out all this is unneccisary since sd() function exists
@@ -185,10 +184,8 @@ ggpairs(expenditure[,2:5], labels = c("Y", "X1", "X2", "X3"), main = "All colums
 
 
 #Part 2)
-ggplot(data = expenditure) + #graphing Y against region
-  geom_point(mapping = aes(y = Y, x = Region))+
-  ggtitle("per capita spending on housing assistance grouped by region")
-
+boxplot(Y~Region,data = expenditure, main ="per capita spending on housing assistance grouped by region") #graphing boxplot
+  
 for(i in 1:4)  #creating objects containing the section of the dataset which are from the same region
   { 
   nam <- paste("Region_", i, sep = "")
